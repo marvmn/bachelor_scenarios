@@ -15,7 +15,7 @@ from expressive_motion_generation.utils import make_point_at_task_from, convert_
 from expressive_motion_generation.effects import *
 
 # this variable determines whether the purely functional or the expressive scenario is executed
-expressive = True
+expressive = False
 
 
 robot = RobotCommander()
@@ -228,11 +228,11 @@ if expressive:
 
     # planner.add_task(task)
 
-    planner.plan_animation('/home/mwiebe/noetic_ws/IsaacSim-ros_workspaces/noetic_ws/panda_animations/animation_handover_wiggle2.yaml')
+    planner.plan_animation('/home/mwiebe/noetic_ws/IsaacSim-ros_workspaces/noetic_ws/panda_animations/animation_handover_wiggle3.yaml')
 
     convert_animation_to_relative(planner.get_task_at(0).target)
     planner.get_task_at(0).target._reload_trajectory(robot.get_group('panda_arm').get_current_joint_values())
-    planner.get_task_at(0).target.trajectory_planner.scale_global_speed(0.7)
+    # planner.get_task_at(0).target.trajectory_planner.scale_global_speed(1)
 
     planner.execute()
 

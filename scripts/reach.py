@@ -151,4 +151,3 @@ if not expressive:
 else:
     planner.plan_animation("/home/mwiebe/noetic_ws/IsaacSim-ros_workspaces/noetic_ws/panda_animations/animation_handover_joy_grippy.yaml")
     planner.execute()
-    planner.execute()
